@@ -1,0 +1,35 @@
+{
+  "model": "LightGBM regularized",
+  "status": "RESEARCH_CANDIDATE",
+  "tahun": 2026,
+  "wilayah": "6 provinsi penelitian DIMAS-TI",
+  "target": "y_7d",
+  "prediction_horizon_days": 7,
+  "feature_order": [
+    "rain_prev7_mm",
+    "rain_prev14_mm",
+    "hotspot_prev7",
+    "hotspot_prev14",
+    "frp_prev7",
+    "temp_prev7_mean",
+    "rh_prev7_mean",
+    "soil_prev7_mean",
+    "wind_prev7_mean",
+    "month_2026"
+  ],
+  "threshold_f1": 0.12988760712382066,
+  "threshold_recall70": 0.054512015845114614,
+  "validation_pr_auc": 0.539554956719194,
+  "validation_f1": 0.5430823650428777,
+  "source_model": "results_orang_b\\lightgbm_tuned_2026.joblib",
+  "sha256": "3bcacc4a251c6c5a0f2949689ba145b4da98a4220daa546e2dbdbd47290e35a4",
+  "input_requirement": "Seluruh fitur harus dihitung sebelum waktu prediksi, menggunakan riwayat tanggal yang benar.",
+  "missing_policy": "NaN boleh untuk LightGBM; jangan otomatis isi nol.",
+  "important_limitations": [
+    "Test September sudah pernah terekspos saat eksperimen baseline",
+    "Ketersediaan CHIRPS dan ERA5 secara real-time belum diverifikasi",
+    "Model baru diuji pada tahun 2026",
+    "Model memprediksi hotspot, bukan konfirmasi kebakaran"
+  ],
+  "verified_shap_example_probability": 0.7868229107420335
+}

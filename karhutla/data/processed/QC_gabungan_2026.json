@@ -1,0 +1,10 @@
+{
+  "year": 2026,
+  "rows": 5841227,
+  "grids": 22553,
+  "task_files": 120,
+  "label_last_date": "2026-10-09",
+  "weather_missing_values": 292152,
+  "note": "Keterangan split memakai jeda 7 hari; NaN cuaca dipertahankan, bukan nol",
+  "dataset": "D:\\PROJECT\\DIMAS-TI-A\\karhutla\\data\\processing\\dataset_gabungan_2026.parquet"
+}

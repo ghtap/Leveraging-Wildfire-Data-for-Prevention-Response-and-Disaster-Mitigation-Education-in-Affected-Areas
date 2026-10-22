@@ -1,0 +1,9 @@
+{
+  "model": "LightGBM",
+  "validation_pr_auc": 0.3981667126219198,
+  "validation_roc_auc": 0.6674929008900652,
+  "validation_f1": 0.3577881270340029,
+  "validation_precision": 0.3151456742530951,
+  "validation_recall": 0.41377632133934655,
+  "threshold": 0.059793221317264444
+}

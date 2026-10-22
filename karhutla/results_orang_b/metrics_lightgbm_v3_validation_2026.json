@@ -1,0 +1,25 @@
+{
+  "model": "LightGBM_v3",
+  "evaluation_split": "validation",
+  "train_rows": 4623365,
+  "validation_rows": 541272,
+  "features": [
+    "rain_prev7_mm",
+    "rain_prev14_mm",
+    "hotspot_prev7",
+    "hotspot_prev14",
+    "frp_prev7",
+    "temp_prev7_mean",
+    "rh_prev7_mean",
+    "soil_prev7_mean",
+    "wind_prev7_mean",
+    "month_2026"
+  ],
+  "pr_auc": 0.5337789656480499,
+  "roc_auc": 0.7825753047077193,
+  "f1": 0.5427040227935689,
+  "precision": 0.5243521226177271,
+  "recall": 0.5623871170089657,
+  "threshold": 0.14223897888865156,
+  "best_iteration": 75
+}
