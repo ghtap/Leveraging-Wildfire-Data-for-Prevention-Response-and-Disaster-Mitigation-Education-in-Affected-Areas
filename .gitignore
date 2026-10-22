@@ -1,0 +1,38 @@
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Datasets
+*.csv
+*.parquet
+*.xlsx
+*.xlsm
+*.zip
+*.tif
+*.tiff
+*.gpkg
+*.npy
+*.npz
+
+# Models
+*.pkl
+*.pickle
+*.joblib
+*.onnx
+
+# Project data and experimental outputs
+karhutla/data/
+karhutla/results/
+karhutla/results_orang_b/
+karhutla/models_final/

@@ -1,0 +1,62 @@
+# Konfigurasi bersama (A, B, C). Ubah di sini, jangan hard-code di skrip.
+provinces: [Kalimantan Tengah, Sumatera Selatan, Jambi, Kalimantan Barat, Kalimantan Selatan, Riau]
+
+dates:
+  start: "2026-01-01"
+  end: "2026-10-16"          # tanggal terakhir data FIRMS yang diunduh
+  test_start: "2026-09-01"   # info pemisahan temporal 2026; data GEE dipanggil lewat --run-2026
+
+grid:
+  cell_deg: 0.045
+  boundary_file: data/interim/prov_boundary.geojson
+  province_col: ADM1_NAME
+
+label:
+  horizon_days: 7            # y=1 jika ada hotspot pada hari t+1..t+7
+  min_hotspots: 1
+
+firms:
+  raw_csv: data/raw/firms_raw.csv
+  # Konsistensi sensor: daftar ini harus sama untuk train dan test.
+  # NOAA-21 sengaja tidak dipakai (baru ada sejak 2024).
+  sensors: [VIIRS_SNPP, VIIRS_NOAA20]
+  drop_viirs_low_conf: true
+  min_modis_conf: 30
+  bboxes:                    # hanya untuk download()
+    sumatra: "100.0,-4.9,106.2,2.9"
+    kalimantan: "108.5,-4.3,116.8,2.2"
+  sp_end: "2026-03-31"       # perkiraan akhir data standar (SP); sisanya NRT
+
+climate:
+  gee_project: dimasti-karhutla-2026
+  gee_folder: DIMASTI_KARHUTLA
+  gee_dir: data/raw/gee
+  chirps_asset: UCSB-CHC/CHIRPS/V3/DAILY_SAT   # satu versi CHIRPS untuk seluruh deret (jangan campur v2/v3)
+  export_months: 3                # ukuran potongan ekspor; kecilkan jika GEE timeout
+  oni_file: data/raw/oni.csv
+  dmi_file: data/raw/dmi_raw.txt
+
+static:
+  gee_dir: data/raw/gee
+  peat_file: data/raw/peat/gambut.gpkg   # opsional, poligon lahan gambut (lihat README)
+  built_tif: data/raw/gee/built_frac_001deg.tif
+  built_frac_threshold: 0.02             # piksel 0.01 deg dianggap permukiman bila fraksi built-up >= ini
+
+features:
+  precip_windows: [7, 14, 30, 60, 90]
+  temp_windows: [7, 30]
+  rh_windows: [7, 30]
+  soil_windows: [7, 30]
+  wind_windows: [7]
+  hotspot_windows: [7, 14, 30, 90]
+  dry_day_mm: 1.0
+  max_days_since_hotspot: 365
+  vi_availability_days: 24   # komposit MOD13Q1 16 hari dianggap tersedia 24 hari setelah tanggal awalnya (16 + ~8 hari pemrosesan; asumsi)
+  vi_change_days: 32         # selisih NDVI/EVI terhadap 32 hari sebelumnya
+  vi_max_ffill_days: 60
+  obs_latency_days: 0        # >0 untuk meniru keterlambatan data operasional (ERA5-Land ~ bulanan)
+  enso_lag_months: 2         # ONI bulan m memakai data sampai m+1, jadi dilag 2 bulan agar tanpa kebocoran
+
+paths:
+  interim: data/interim
+  processed: data/processing

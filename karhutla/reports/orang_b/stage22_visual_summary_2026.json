@@ -1,0 +1,27 @@
+{
+  "stage": 22,
+  "title": "Peta probabilitas dan evaluasi wilayah",
+  "model": "regularized",
+  "map_date": "2026-09-30",
+  "prediction_horizon_days": 7,
+  "n_grids": 22553,
+  "n_provinces": 6,
+  "threshold_f1": 0.12988760712382066,
+  "n_alerts": 4932,
+  "average_probability": 0.12067222595214844,
+  "files": {
+    "map": "figures\\orang_b\\stage22_risk_map_20260930.png",
+    "province_ap": "figures\\orang_b\\stage22_province_pr_auc_2026.png",
+    "province_errors": "figures\\orang_b\\stage22_province_errors_2026.png",
+    "grid_export": "reports\\orang_b\\stage22_grid_risk_20260930.csv",
+    "notebook": "notebooks\\Visualisasi_Risiko_2026.ipynb"
+  },
+  "notes": [
+    "Peta merupakan hasil historis September 2026",
+    "Titik adalah pusat grid, bukan batas kebakaran",
+    "Probabilitas model belum diuji kalibrasinya",
+    "Threshold dipilih menggunakan validation Agustus",
+    "Test September pernah terekspos dalam eksperimen",
+    "Fitur cuaca untuk operasional real-time belum diaudit"
+  ]
+}

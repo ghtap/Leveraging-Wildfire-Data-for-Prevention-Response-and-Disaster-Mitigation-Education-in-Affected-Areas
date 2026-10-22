@@ -1,0 +1,12 @@
+numpy
+pandas
+pyyaml
+requests
+geopandas
+shapely
+pyarrow
+scipy
+rasterio
+earthengine-api
+pytest
+matplotlib

@@ -1,0 +1,77 @@
+{
+  "tahun": 2026,
+  "audit": "Paket 17 - Data Leakage",
+  "status_offline": "LOLOS_PEMERIKSAAN_OFFLINE_TERBATAS",
+  "split": {
+    "test": {
+      "awal": "2026-09-01",
+      "akhir": "2026-09-30",
+      "baris": 676590,
+      "positif": 110983,
+      "prevalensi": 0.16403287071934258
+    },
+    "train": {
+      "awal": "2026-01-01",
+      "akhir": "2026-07-24",
+      "baris": 4623365,
+      "positif": 54394,
+      "prevalensi": 0.011765023959821472
+    },
+    "validation": {
+      "awal": "2026-08-01",
+      "akhir": "2026-08-24",
+      "baris": 541272,
+      "positif": 92463,
+      "prevalensi": 0.1708253890834922
+    }
+  },
+  "jeda_hari": {
+    "train_ke_validation": 7,
+    "validation_ke_test": 7
+  },
+  "jumlah_baris": 5841227,
+  "duplikat": 0,
+  "sampel_label": {
+    "diperiksa": 900,
+    "beda_label": 0,
+    "beda_jumlah_hotspot": 0
+  },
+  "sampel_rolling": {
+    "diperiksa": 600,
+    "riwayat_tidak_lengkap": 0,
+    "beda_hujan": 0,
+    "beda_hotspot": 0
+  },
+  "critical_findings": {
+    "jeda_kurang_7_hari": false,
+    "duplikat_grid_tanggal": 0,
+    "missing_label": 0,
+    "inkonsistensi_label_internal": 0,
+    "bulan_tidak_cocok": 0,
+    "label_berbeda_dari_FIRMS_sampel": 0,
+    "jumlah_hotspot_next7_berbeda_sampel": 0,
+    "rolling_hujan_berbeda_sampel": 0,
+    "rolling_hotspot_berbeda_sampel": 0,
+    "fitur_terlarang": []
+  },
+  "model_stage16": "regularized",
+  "fitur_model": [
+    "rain_prev7_mm",
+    "rain_prev14_mm",
+    "hotspot_prev7",
+    "hotspot_prev14",
+    "frp_prev7",
+    "temp_prev7_mean",
+    "rh_prev7_mean",
+    "soil_prev7_mean",
+    "wind_prev7_mean",
+    "month_2026"
+  ],
+  "belum_terverifikasi": [
+    "Jeda publikasi CHIRPS dan ERA5-Land",
+    "Ketersediaan fitur pada waktu prediksi nyata",
+    "Generalisasi spasial antarlokasi",
+    "Test September sudah pernah digunakan sebelumnya",
+    "Validasi rolling pada tanggal jeda belum diaudit langsung"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "stage": 18,
+  "method": "Geographic block holdout",
+  "block_size_degree": 0.45,
+  "n_heldout_blocks": 60,
+  "n_heldout_grids": 4642,
+  "threshold_source": "validation_seen",
+  "threshold": 0.12901121024435044,
+  "model_source": "results_orang_b\\lightgbm_tuned_2026.joblib",
+  "features": [
+    "rain_prev7_mm",
+    "rain_prev14_mm",
+    "hotspot_prev7",
+    "hotspot_prev14",
+    "frp_prev7",
+    "temp_prev7_mean",
+    "rh_prev7_mean",
+    "soil_prev7_mean",
+    "wind_prev7_mean",
+    "month_2026"
+  ],
+  "results": [
+    {
+      "subset": "validation_seen",
+      "rows": 429864,
+      "positive_rate": 0.17964519010663837,
+      "pr_auc": 0.5557171000963216,
+      "roc_auc": 0.7775464028351114,
+      "precision": 0.5419226421585491,
+      "recall": 0.5711510819315488,
+      "f1": 0.5561531041352743,
+      "confusion_matrix": [
+        [
+          315359,
+          37282
+        ],
+        [
+          33117,
+          44106
+        ]
+      ]
+    },
+    {
+      "subset": "validation_unseen",
+      "rows": 111408,
+      "positive_rate": 0.13679448513571738,
+      "pr_auc": 0.4433224654040769,
+      "roc_auc": 0.7427679488361466,
+      "precision": 0.4497483075854886,
+      "recall": 0.5100393700787401,
+      "f1": 0.4780001844848261,
+      "confusion_matrix": [
+        [
+          86658,
+          9510
+        ],
+        [
+          7467,
+          7773
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "Parameter model sebelumnya telah dipilih dengan validation Agustus",
+    "Karena itu audit spasial ini diagnostik, bukan test independen murni",
+    "Blok geografis berdekatan masih dapat berbagi kondisi lingkungan",
+    "Data test September tidak digunakan dalam script ini"
+  ]
+}
