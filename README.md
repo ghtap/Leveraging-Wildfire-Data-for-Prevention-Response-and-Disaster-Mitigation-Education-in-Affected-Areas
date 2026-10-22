@@ -10,6 +10,14 @@
 
 ---
 
+## 🗺️ Wildfire Hotspot Risk Map
+
+This map shows the predicted wildfire hotspot risk for the study area based on the trained LightGBM model.
+
+![Wildfire Hotspot Risk Map](karhutla/figures/orang_b/stage22_risk_map_20260930.png)
+
+*Figure: Predicted wildfire hotspot risk map for September 30, 2026.*
+
 ## 📌 Project Overview
 
 Forest and land fires (*Kebakaran Hutan dan Lahan*, or **Karhutla**) remain a significant environmental challenge in Indonesia, affecting ecosystems, public health, and local communities.
