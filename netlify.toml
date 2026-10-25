@@ -1,0 +1,4 @@
+# Situs statis: dist/ dibangun lokal (python -m src.app.karhutla_lab build), lalu dideploy.
+# Tidak ada build command karena dataset/model terlalu besar untuk ada di Netlify.
+[build]
+  publish = "dist"

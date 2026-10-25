@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karhutla Lab – Prakiraan Risiko Kebakaran Hutan dan Lahan</title>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <h1>Karhutla Lab</h1>
+  <span class="sub">Prakiraan risiko kebakaran hutan dan lahan 7 hari ke depan</span>
+  <nav>
+    <button class="tab active" data-tab="map">Peta</button>
+    <button class="tab" data-tab="metrics">Kinerja model</button>
+    <button class="tab" data-tab="about">Tentang</button>
+  </nav>
+</header>
+<div id="status-note" hidden></div>
+<div id="demo-banner" hidden>DATA DEMO: nilai di bawah ini sintetis dan bukan prediksi nyata.</div>
+
+<main id="tab-map" class="tabpane">
+  <section id="mapwrap">
+    <div id="map"></div>
+    <div id="legend"></div>
+  </section>
+  <aside id="side">
+    <div class="card">
+      <div class="row">
+        <label for="prov">Wilayah</label>
+        <select id="prov"></select>
+      </div>
+      <div class="row">
+        <button id="play" title="Putar animasi">▶</button>
+        <input id="slider" type="range" min="0" max="0" value="0">
+      </div>
+      <div id="datelabel"></div>
+      <label class="chk"><input type="checkbox" id="obs"> Tampilkan kejadian aktual (hotspot dalam 7 hari)</label>
+    </div>
+    <div class="card"><h2>Ringkasan</h2><div id="summary"></div><canvas id="ts" width="320" height="110"></canvas></div>
+    <div class="card" id="cellcard"><h2>Sel terpilih</h2><div id="cell">Klik sebuah sel pada peta.</div></div>
+  </aside>
+</main>
+
+<main id="tab-metrics" class="tabpane" hidden><div class="card wide"><h2>Kinerja model</h2><div id="metrics">Memuat…</div><div id="figs"></div></div></main>
+
+<main id="tab-about" class="tabpane" hidden>
+  <div class="card wide">
+    <h2>Cara membaca</h2>
+    <p id="labeldef"></p>
+    <p>Setiap kotak pada peta adalah satu sel grid. Warna menunjukkan tingkat risiko berdasarkan skor model dan ambang dari Orang B. Geser tanggal untuk melihat prakiraan pada hari lain.</p>
+    <p>Panel <b>Sel terpilih</b> memuat nilai fitur dan simulasi "bagaimana jika". Simulasi memakai perkiraan sensitivitas model dan menjumlahkan efek tiap fitur, jadi hasilnya pendekatan.</p>
+    <p><b>Batasan:</b> ini model statistik berbasis data satelit dan reanalisis, bukan peringatan resmi. Untuk keputusan operasional, rujuk BMKG, BNPB, dan KLHK.</p>
+    <h2>Model</h2><div id="modelinfo"></div><h2 style="margin-top:12px">Ketepatan per tingkat</h2><div id="levelstats"></div>
+    <p id="generated" class="muted"></p>
+  </div>
+</main>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="assets/logic.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
