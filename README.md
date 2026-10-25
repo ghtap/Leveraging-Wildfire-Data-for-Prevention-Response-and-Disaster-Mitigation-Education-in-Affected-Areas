@@ -1,4 +1,4 @@
-# 🌏 Leveraging Wildfire Data for Prevention, Response, and Disaster Mitigation Education in Kalimantan
+# 🌏 Leveraging Wildfire Data for Prevention, Response, and Disaster Mitigation Education in Affected Areas
 
 **A Spatiotemporal Machine Learning Approach to Forest and Land Fire Hotspot Prediction in Indonesia**
 
