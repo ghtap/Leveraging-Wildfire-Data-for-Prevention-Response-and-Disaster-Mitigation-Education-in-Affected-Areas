@@ -1,0 +1,6 @@
+/
+  Cache-Control: no-cache
+/data/*
+  Cache-Control: public, max-age=3600
+/assets/*
+  Cache-Control: public, max-age=3600
